@@ -41,11 +41,10 @@ body{
 }
 
 #socialList{
-  width:70%;
+  width:100%;
   margin: auto;
 }
 #socialList li{
-  display: inline;
   padding: 50px;
   list-style: none;
 }
@@ -54,6 +53,10 @@ body{
   height: 80px;
 }
 
-/* #socialList li a:hover .fa{
-  transform:
-} */
+table{
+  postion: center;
+
+}
+table td{
+  padding:20px;
+}

@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="animation.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://app-cdn.simplegoods.co/assets/external/embed-485d19e15c0d820b38f2851a2490d28cacbb489e8ec728bb882843aaf50c14f0.js"></script>
 </head>
 
 <body>
@@ -26,9 +27,9 @@
         <div class="collapse navbar-collapse" id="MyNavbar">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="#"> Home</a></li>
-            <li><a href="#"> About</a></li>
-            <li><a href="#"> Music Stream</a></li>
-            <li><a href="#"> Store</a></li>
+            <li><a href="#About"> About</a></li>
+            <li><a href="#MusicStream"> Music Stream</a></li>
+            <li><a href="#Store"> Store</a></li>
             <li><a href="https://www.instagram.com/solsticexmusicx/"><i class="fa fa-instagram fa-lg"></i></a></li>
             <li><a href="https://soundcloud.com/solsticexmusicx"><i class="fa fa-soundcloud fa-lg"></i></a></li>
             <li><a href="#"><i class="fa fa-youtube fa-lg"></i></a></li>
@@ -59,7 +60,13 @@
 
 <!-- About Section -->
   <div id="About" class="siteContent container">
-    <h1>About</h1>
+    <h1>Bio</h1>
+    <p> <i>Solstice</i> is a guitarist from the US who, primarily, operates in the progressive rock and metal genre. While he takes heavy influences from well known names like <i>Periphery</i>, <i>Intervals</i>, and <i>Skyharbor</i>, one of his biggest influences is <i>The Weeknd</i>. Shortly before releasing his debut single, "For What It's Worth...", Solstice released a guitar cover of The Weeknd's song, <i>Privilege</i>. Solstice made his debut through the record, <i>All For A Starry Night</i>, which was released on August 31st, 2018.
+    </p>
+    <h1>All For A Starry Night (2018)</h1>
+    <p><i>All For A Starry Night</i> is Solstice's debut record. Featuring eight original tracks and two guitar remixes, <i>All For A Starry Night</i> drags the listener through emotional ambiguity, elation, and ultimately, down into a dark abyss during the last track of the record, "All For A Starry Night" (which features guest vocals by Teddy Muciri). The record's promotion was conducted exclusively through his <a href="https://www.instagram.com/solsticexmusicx/" target="_blank">Instagram</a> where Solstice released several teasers and guitar playthroughs of his work to give listeners a preview of music to come. On August 17th, 2018, <i>Solstice's</i> debut single, "For What It's Worth...", was released exclusively on his <a href="https://soundcloud.com/solsticexmusicx" target="_blank">Soundcloud</a> and garnered several plays within minutes of its release.
+    </p>
+
   </div>
 
 <!-- Music Stream Section-->
@@ -81,11 +88,12 @@
       <div class="col-lg-3">
         <img src="img/periphery2.jpg" alt="musicStream2" width="220" height="220">
       </div>
-
   </div>
+</div>
 <!-- Store Section -->
   <div id="Store" class="siteContent container">
     <h1>Store</h1>
+    <a href="https://app.simplegoods.co/i/MYRQZFAN" class="simple-goods-btn" style="background-color:#2ab2fe ">Buy Now </a>
   </div>
 
 
@@ -115,4 +123,44 @@
 
 
 </body>
+<script>
+//Smooth Scrolling Method
+// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+      &&
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+</script>
+
 </html>

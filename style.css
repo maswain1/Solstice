@@ -3,6 +3,11 @@ html, body{
   width: 100%;
 }
 
+p{
+  text: center;
+  font-size: 17px;
+}
+
 hr{
   color: white;
 }

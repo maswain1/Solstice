@@ -13,12 +13,16 @@ hr{
 }
 nav{
   background: url(img/starrynight_1.jpg) no-repeat center center fixed;
-  /* display: table;
-  height: 100%;
-  position: relative;
-  width: 100%;
-  background-size: cover;*/
+
 }
+.navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+
 body{
   background: url(img/starrynight_1.jpg) no-repeat center center fixed;
   display: table;
@@ -30,6 +34,10 @@ body{
 
 .siteContent{
   color: white;
+}
+
+#Home{
+  padding-top: 60px;
 }
 
 #premier{
